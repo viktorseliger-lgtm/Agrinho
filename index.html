@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroForte Futuro - Sustentabilidade de Alta Precisão</title>
+    <style>
+        /* Reset e Variáveis de Design Futurista */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Orbitron', 'Segoe UI', sans-serif;
+        }
+
+        :root {
+            --bg-principal: #fafdfb;
+            --bg-card: #ffffff;
+            --tech-dark: #0f2019;
+            --neon-green: #00ff87;
+            --agrotech: #10b981;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --border-glow: rgba(0, 255, 135, 0.2);
+        }
+
+        body {
+            background-color: var(--bg-principal);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        /* Linhas de Grade Tecnológicas (Efeito de Fundo Sem Imagem) */
+        .tech-lines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(16, 185, 129, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(16, 185, 129, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Cabeçalho Futurista */
+        header {
+            background-color: rgba(15, 32, 25, 0.95);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            padding: 1.2rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--agrotech);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--neon-green);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green);
+        }
+
+        /* Painel Hero Quantum */
+        .hero {
+            background: linear-gradient(135deg, #0f2019 0%, #1e4632 100%);
+            color: #fff;
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid var(--neon-green);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -10%;
+            width: 120%;
+            height: 100px;
+            background: var(--bg-principal);
+            transform: rotate(2deg);
+        }
+
+        .hero-tag {
+            background: rgba(0, 255, 135, 0.1);
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+            padding: 0.4rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 900px;
+            margin: 0 auto 2.5rem auto;
+            color: #cbd5e1;
+        }
+
+        .btn-cyber {
+            display: inline-block;
+            background: transparent;
+            color: var(--neon-green);
+            border: 2px solid var(--neon-green);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(0, 255, 135, 0.2);
+        }
+
+        .btn-cyber:hover {
+            background: var(--neon-green);
+            color: var(--tech-dark);
+            box-shadow: 0 0 30px var(--neon-green);
+        }
+
+        /* Seções de Conteúdo Expandido */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .main-intro {
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto 5rem auto;
+        }
+
+        .main-intro h2 {
+            font-size: 2.5rem;
+            color: var(--tech-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .main-intro p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        /* Grade de Macrotecnologias */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .tech-card {
+            background: var(--bg-card);
+            padding: 3rem 2.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(16, 185, 129, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .tech-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            transition: all 0.4s;
+            pointer-events: none;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.08);
+        }
+
+        .tech-card:hover::before {
+            border-color: var(--agrotech);
+        }
+
+        .card-icon-text {
+            font-size: 0.8rem;
+            color: var(--agrotech);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .tech-card h3 {
+            font-size: 1.6rem;
+            color: var(--tech-dark);
+            margin-bottom: 1.2rem;
+        }
+
+        .tech-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-list {
+            list-style: none;
+        }
+
+        .tech-list li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+        }
+
+        .tech-list li::before {
+            content: '▹';
+            color: var(--agrotech);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Seção de Dados Críticos (Data Stream) */
+        .data-stream {
+            background-color: var(--tech-dark);
+            color: #fff;
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .data-item h4 {
+            font-size: 3.5rem;
+            color: var(--neon-green);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .data-item p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        /* Seção de Manifesto */
+        .manifesto-box {
+            background: linear-gradient(to right, #e6f7f0, #f0fdf4);
+            border-left: 6px solid var(--agrotech);
+            padding: 4rem;
+            border-radius: 0 20px 20px 0;
+            margin-top: 4rem;
+        }
+
+        .manifesto-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--tech-dark);
+        }
+
+        /* Rodapé Matrix */
+        footer {
+            background-color: #0b1511;
+            color: #94a3b8;
+            padding: 4rem 2rem 2rem 2rem;
+            border-top: 2px solid var(--tech-dark);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            border-bottom: 1px solid #1e293b;
+            padding-bottom: 3rem;
+        }
+
+        .footer-brand h4 {
+            color: #fff;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links h5 {
+            color: var(--neon-green);
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 968px) {
+            .hero h1 { font-size: 2.5rem; }
+            .manifesto-box { padding: 2rem; }
+            .nav-container { flex-direction: column; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tech-lines"></div>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">AGRO<span>FUTURO</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Painel</a></li>
+                    <li><a href="#tecnologias">Ecossistemas</a></li>
+                    <li><a href="#dados">Métricas</a></li>
+                    <li><a href="#manifesto">Manifesto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <span class="hero-tag">Biosfera Dinâmica & IA</span>
+        <h1>Agrocomputação Sustentável:<br>A Próxima Matriz Produtiva</h1>
+        <p>Fundindo a engenharia de dados à biologia regenerativa para criar uma infraestrutura de produção de alimentos inteligente, automatizada e totalmente integrada à preservação planetária.</p>
+        <a href="#tecnologias" class="btn-cyber">Acessar Arquitetura</a>
+    </section>
+
+    <main class="container">
+        <div class="main-intro">
+            <h2>A Convergência entre Força e Regeneração</h2>
+            <p>O agronegócio moderno exige uma ruptura com os modelos extrativistas do passado. Através do monitoramento computacional em tempo real e de práticas biológicas avançadas, estamos desenvolvendo um ecossistema autossustentável onde cada metro quadrado atinge eficiência máxima com pegada de carbono negativa.</p>
+        </div>
+
+        <div id="tecnologias" class="tech-grid">
+            
+            <div class="tech-card">
+                <span class="card-icon-text">Módulo 01 // Automação</span>
+                <h3>Biosistemas Autônomos</h3>
+                <p>Nossos sistemas operam via frotas de robótica agrícola inteligente conectados à rede descentralizada. Eles realizam o manejo, plantio e colheita sem compactação do solo, respondendo a estímulos meteorológicos hiper-locais.</p>
+                <ul class="tech-list">
+                    <li>Drones com sensores hiperespectrais</li>
+                    <li>Micro-maquinário elétrico automatizado</li>
+                    <li>Análise preditiva de pragas em tempo real</li>
+                </ul>
+            </div>
+
+            <div class="tech-card">
+                <span class="card-icon-text">Módulo 02 // Bioengenharia</span>
+                <h3>Solo Vivo Regenerativo</h3>
+                <p>A força da terra potencializada por dados estruturados. Substituímos intervenções químicas agressivas por biocombustíveis, biofertilizantes customizados e sequenciamento de microbioma do solo para restauração acelerada.</p>
+                <ul class="tech-list">
+                    <li>Microbiologia aplicada e bioinsumos</li>
+                    <li>Sequestro de carbono molecular ativo</li>
+                    <li>Sistemas de rotação via algoritmos simbióticos</li>
+                </ul>
+            </div>
+
+            <div class="tech-card">
+                <span class="card-icon-text">Módulo 03 // Hidro-Otimização</span>
+                <h3>Gestão Hídrica Preditiva</h3>
+                <p>Sensores IoT integrados diretamente na raiz das culturas medem com precisão a necessidade de hidratação celular. Desperdício zero, eficiência hídrica máxima guiada por aprendizado de máquina profunda.</p>
+                <ul class="tech-list">
+                    <li>Irrigação em gota cirúrgica automatizada</li>
+                    <li>Captação e reaproveitamento de água pluvial</li>
+                    <li>Simulação de estresse hídrico preventivo</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div id="manifesto" class="manifesto-box">
+            <h3>Manifesto AgroForte 2026 e Além</h3>
+            <p style="margin-bottom: 1rem;">Não estamos apenas cultivando alimentos; estamos codificando o ecossistema de sobrevivência do futuro. O conceito "Agro Forte" não significa mais a expansão desenfreada de fronteiras, mas o adensamento tecnológico e verticalização do conhecimento aplicado à terra.</p>
+            <p>A verdadeira sustentabilidade nasce quando a tecnologia deixa de agredir a natureza e passa a atuar como sua interface de ampliação. Ao decodificar os sinais da natureza através de sensores, nós devolvemos ao ecossistema a estabilidade que ele precisa para alimentar as gerações futuras de forma perene e limpa.</p>
+        </div>
+    </main>
+
+    <section id="dados" class="data-stream">
+        <div class="data-grid">
+            <div class="data-item">
+                <h4>98%</h4>
+                <p>Redução no desperdício de recursos hídricos nas fazendas integradas.</p>
+            </div>
+            <div class="data-item">
+                <h4>0%</h4>
+                <p>Uso de químicos persistentes através de defesa biológica ativa.</p>
+            </div>
+            <div class="data-item">
+                <h4>-3.2t</h4>
+                <p>De CO2 equivalente sequestrados por hectare ao ano.</p>
+            </div>
+            <div class="data-item">
+                <h4>+45%</h4>
+                <p>De incremento em densidade nutricional das safras verticais.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h4>AGRO<span>FUTURO</span></h4>
+                <p>Plataforma aberta para a governança ambiental e inteligência agronômica do amanhã.</p>
+            </div>
+            <div class="footer-links">
+                <h5>Arquitetura</h5>
+                <ul>
+                    <li><a href="#">Rede IoT de Sensores</a></li>
+                    <li><a href="#">Algoritmos de Solo</a></li>
+                    <li><a href="#">Código Aberto Agro</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Documentação</h5>
+                <ul>
+                    <li><a href="#">Relatório de Impacto</a></li>
+                    <li><a href="#">Termos de Biometria</a></li>
+                    <li><a href="#">Privacidade de Dados do Campo</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 AgroFuturo Redes Globais. Sistemas de Produção Regenerativa Computacional.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
